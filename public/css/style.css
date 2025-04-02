@@ -11,11 +11,19 @@ body {
 
 }
 
-.logo{
+.logo {
     max-width: 50%;
     width: 20%;
     border-radius: 50%;
 }
+
+@media (max-width: 768px) { /* Ajusta para telas menores, como celulares */
+    .logo {
+        width: 80%;
+        max-width: 80%;
+    }
+}
+
 
 #lista ,tr ,th ,td , .modal-content{
     background-color: #faf8f1 !important;
