@@ -9,6 +9,6 @@ class convidados extends Model
 {
     use HasFactory;
     protected $table="convidados";
-    public $fillable = ['familia' , 'nome' , 'data_confirmacao' , 'telefone' , 'status'];
+    public $fillable = ['familia' , 'nome' , 'data_confirmacao' , 'telefone' , 'status' , 'qtd_convidados'];
 
 }

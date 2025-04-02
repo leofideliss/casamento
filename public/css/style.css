@@ -1,9 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+
+h1, h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #faf8f1;
+
+}
+
 .logo{
     max-width: 50%;
     width: 20%;
     border-radius: 50%;
 }
 
-body{
-    background-color: #faf8f1;
+#lista ,tr ,th ,td , .modal-content{
+    background-color: #faf8f1 !important;
+}
+
+.btn-confirmar {
+    background-color: #D6CFC3; /* Tom suave que combina com #FAF8F1 */
+    color: #333; /* Texto escuro para contraste */
+    border: 2px solid #C8BBAF; /* Borda levemente mais escura */
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efeito hover */
+.btn-confirmar:hover {
+    background-color: #C8BBAF; /* Tom um pouco mais escuro no hover */
+    border-color: #B5A89A;
+    color: #222;
+}
+
+/* Efeito ao clicar */
+.btn-confirmar:active {
+    background-color: #B5A89A; /* Mais escuro no clique */
+    border-color: #9E9287;
 }

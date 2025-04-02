@@ -28,4 +28,17 @@ class PrimaryController extends Controller
             ->addIndexColumn()
             ->make(true);
     }
+
+    function alterarStatus(Request $request){
+        $convidado = convidados::find($request->id);
+        $status = $request->action == "confirmar" ? 1 : 2;
+        $convidado->status = $status;
+        $convidado->data_confirmacao = date("Y-m-d H:i:s");
+        $convidado->qtd_convidados = $status == 1 ? $request->qtd : 0;
+
+        $rows = $convidado->update();
+        if($rows > 0)
+            return response()->json(["message" => "atualizado com sucesso!"],200);
+        return response()->json(["message" => "error!"],400);
+    }
 }

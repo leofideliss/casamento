@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post("/createConvidado" , [PrimaryController::class,"createConvidado"]);
 Route::get("/getAllConvidados" , [PrimaryController::class,"getAllConvidados"]);
+Route::put("/updateStatus" , [PrimaryController::class,"alterarStatus"]);
