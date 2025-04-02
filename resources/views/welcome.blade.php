@@ -14,7 +14,12 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="{{asset("js/datatable.js")}}"> </script>
     <script src="{{asset("js/default.js")}}"> </script>
-
+<link rel="icon" type="image/png" href="{{ asset('lel.png') }}">
+<meta property="og:title" content="Casamento Leonardo e Luiza">
+<meta property="og:description" content="Leonardo e Luiza vão se casar!">
+<meta property="og:image" content="{{ asset('lel.png') }}">
+<meta property="og:url" content="{{ route('lista') }}">
+<meta property="og:type" content="website">
 </head>
 
 <body class="container mt-5">
