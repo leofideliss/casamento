@@ -27,22 +27,31 @@
         <img src="{{asset("lel.png")}}" class="logo">
     </div>
 
-<div class="row justify-content-between">
-    <h2 class="col-3 mb-4 text-center">
-        <a href="{{ route('lista') }}" class="nav-link {{ request()->routeIs('lista') ? 'active' : '' }}">Lista de Presença</a>
-    </h2>
-    <h2 class="col-3 mb-4 text-center">
-        <a href="{{ route('presente') }}" class="nav-link {{ request()->routeIs('presente') ? 'active' : '' }}">Lista de Presentes</a>
-    </h2>
-    <h2 class="col-3 mb-4 text-center">
-        <a href="{{ route('informacoes') }}" class="nav-link {{ request()->routeIs('informacoes') ? 'active' : '' }}">Informações</a>
-    </h2>
-</div>
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-3 col-12 mb-3">
+                <h2>
+                    <a href="{{ route('lista') }}" class="nav-link {{ request()->routeIs('lista') ? 'active' : '' }}">Lista de Presença</a>
+                </h2>
+            </div>
+            <div class="col-md-3 col-12 mb-3">
+                <h2>
+                    <a href="{{ route('presente') }}" class="nav-link {{ request()->routeIs('presente') ? 'active' : '' }}">Lista de Presentes</a>
+                </h2>
+            </div>
+            <div class="col-md-3 col-12 mb-3">
+                <h2>
+                    <a href="{{ route('informacoes') }}" class="nav-link {{ request()->routeIs('informacoes') ? 'active' : '' }}">Informações</a>
+                </h2>
+            </div>
+        </div>
+    </div>
+
      <div class="divisor">
     <span>L&L</span> <!-- Ícone ou caractere decorativo -->
 </div>
 
-     <h2>Informações</h2>
+     <h2 class="mb-4 mt-4">Informações</h2>
 
 </body>
 

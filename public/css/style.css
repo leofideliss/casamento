@@ -93,9 +93,29 @@ body {
     color: #333;
     padding: 10px 15px;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
+/* Estilo padrão para links ativos */
 .nav-link.active {
     background-color: #333;
     color: #faf8f1;
 }
+
+/* Ajuste para telas menores (removendo bordas e adicionando linha embaixo) */
+@media (max-width: 768px) {
+    .nav-link {
+        border-radius: 0; /* Remove arredondamento */
+        padding: 10px 0; /* Ajusta o espaçamento */
+        display: block;
+        text-align: center;
+        border-bottom: 2px solid transparent; /* Prepara a linha */
+    }
+
+    .nav-link.active {
+        background-color: transparent; /* Remove o fundo */
+        color: #333;
+        border-bottom: 2px solid #333; /* Adiciona a linha abaixo */
+    }
+}
+
