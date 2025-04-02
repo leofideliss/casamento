@@ -53,3 +53,49 @@ body {
     background-color: #B5A89A; /* Mais escuro no clique */
     border-color: #9E9287;
 }
+
+
+.divisor {
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+    position: relative;
+}
+
+.divisor::before, .divisor::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 2px;
+    background-color: #444;
+    position: absolute;
+    top: 50%;
+}
+
+.divisor::before {
+    left: 0;
+}
+
+.divisor::after {
+    right: 0;
+}
+
+.divisor span {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    color: #444;
+    padding: 0 1rem;
+   
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-link.active {
+    background-color: #333;
+    color: #faf8f1;
+}

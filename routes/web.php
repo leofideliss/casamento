@@ -16,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("lista");
 
 Route::get('/luizete', [PrimaryController::class,"addConvidadosView"]);
+Route::get('/listapresente', function () {
+    return view('lista-presente');
+})->name("presente");
+
+Route::get('/informacoes', function () {
+    return view('informacoes');
+})->name("informacoes");

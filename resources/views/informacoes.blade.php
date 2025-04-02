@@ -37,42 +37,7 @@
     <span>L&L</span> <!-- Ícone ou caractere decorativo -->
 </div>
 
-     <h2>Convidados</h2>
-    <table class="table" id="lista">
-        <thead>
-            <tr>
-                <th>Familia</th>
-                <th>Nome</th>
-                <th class="text-center">Confirmar</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
-
-    <input type="hidden" name="app-url" value="{{ env('APP_URL') }}">
-
-    <!-- Modal -->
-    <div class="modal fade" id="confirmarModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="titulo-nome">Confirmação</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Tem certeza que deseja confirmar?</p>
-                    <small>Quantidade de pessoas:</small>
-                    <input type="number" required name="qtd_convidados" placeholder="Quantidade de pessoas">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-confirmar" style="background-color: #dcdcdc !important;border:1px solid #dcdcdc;" data-bs-dismiss="modal" data-action="confirmarAcao" data-custom="cancelar">Não vou ao evento</button>
-                    <button type="button" class="btn-confirmar" data-custom="confirmar" data-action="confirmarAcao">Sim, Irei ao evento</button>
-                </div>
-            </div>
-        </div>
-    </div>
+     <h2>Informações</h2>
 
 </body>
 
