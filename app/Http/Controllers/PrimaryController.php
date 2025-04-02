@@ -21,6 +21,8 @@ class PrimaryController extends Controller
 
     function getAllConvidados(Request $request){
         $convidados = convidados::all();
+        if(empty($convidados))
+            $convidados =[];
 
         return DataTables::of($convidados)
             ->addIndexColumn()
