@@ -52,6 +52,28 @@
 </div>
 
      <h2 class="mb-4 mt-4">Informações</h2>
+<ul class="pb-5 mb-5">
+    <li><strong>Local:</strong>
+        <p>Endereço: Rodovia Julio Budiski - Residencial Campos Verdes, Álvares Machado - SP, 19160-000</p>
+        <p><a href="https://g.co/kgs/LRQAaaW" target="_blank">Ver no Google Maps</a></p>
+        <p><strong>Data:</strong> 17/05/2025 às 11:30</p>
+    </li>
+    <li><strong>Siga o código de vestimenta:</strong>
+        <p>Sugerimos trajes adequados para a ocasião, como o estilo esporte fino, que é ideal para este dia especial. Assim, todos poderão se sentir confortáveis e em sintonia com o evento.</p>
+    </li>
+    <li><strong>Não use branco:</strong>
+        <p>Essa é a cor reservada para a noiva. Evite também tons muito próximos, como off-white ou bege claro.</p>
+    </li>
+    <li><strong>Deixe a decoração no local:</strong>
+        <p>A decoração foi pensada para criar um ambiente mágico. Pedimos que evitem levar qualquer parte dela como lembrança, a menos que seja oferecido algo pelos noivos.</p>
+    </li>
+    <li><strong>Aguarde o momento certo para os doces:</strong>
+        <p>A mesa de doces será liberada no momento oportuno, e queremos que todos possam aproveitar ao máximo!</p>
+    </li>
+    <li><strong>Confirme sua presença com antecedência:</strong>
+        <p>Sua presença é muito importante para nós! Por isso, pedimos que nos avise com antecedência se poderá comparecer. Isso nos ajudará a organizar tudo da melhor forma possível.</p>
+    </li>
+</ul>
 
 </body>
 

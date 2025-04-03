@@ -51,7 +51,7 @@
     </div>
 
     <h2>Convidados</h2>
-    <table class="table" id="lista">
+    <table class="table pb-5" id="lista">
         <thead>
             <tr>
                 <th>Familia</th>
