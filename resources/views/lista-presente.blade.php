@@ -26,7 +26,7 @@
     <div class="d-flex justify-content-center">
         <img src="{{asset("lel.png")}}" class="logo">
     </div>
-
+    <div id="contador" class="mb-5 text-center" style="font-size: 1.5rem; font-weight: bold;"></div>
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-md-3 col-12 mb-3">
@@ -52,7 +52,13 @@
     </div>
 
     <h2 class="mt-4 mb-4">Link para o site da lista de presentes:</h2>
-    <a href="https://luiza.leonardofidelis.com/">https://luiza.leonardofidelis.com/</a>
+    <span>Link para o site da lista de presentes (Magazine Luiza)</span><br>
+    <span>CLique aqui -> </span><a href="https://www.finalfeliz.de/luiza-leonardofidelis">https://www.finalfeliz.de/luiza-leonardofidelis</a>
+    </br>
+    </br>
+
+    <span class="pb-5">Para quem preferir PIX </br> -> Luiza: <strong>43608369880 (CPF)</strong> </br> -> Leonardo:<strong>47175598866 (CPF)</strong></span>
+    </br>
 
 </body>
 

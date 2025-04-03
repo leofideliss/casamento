@@ -26,7 +26,7 @@
     <div class="d-flex justify-content-center">
         <img src="{{asset("lel.png")}}" class="logo">
     </div>
-
+     <div id="contador" class="mb-5 text-center" style="font-size: 1.5rem; font-weight: bold;"></div
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-md-3 col-12 mb-3">

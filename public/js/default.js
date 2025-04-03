@@ -52,6 +52,41 @@ function loadTable(){
     });
 }
 
+function iniciarContagemRegressiva() {
+    let dataEvento = new Date("2025-05-17T11:30:00").getTime();
+
+    let contador = setInterval(function() {
+        let agora = new Date().getTime();
+        let diferenca = dataEvento - agora;
+
+        if (diferenca <= 0) {
+            clearInterval(contador);
+            document.getElementById("contador").innerHTML = "O grande dia chegou! 🎉";
+            return;
+        }
+
+        let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+        let horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+        let segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+        document.getElementById("contador").innerHTML = `
+            <div class="tempo">
+                <span>${dias}</span> <small>Dias</small>
+            </div>
+            <div class="tempo">
+                <span>${horas}</span> <small>Horas</small>
+            </div>
+            <div class="tempo">
+                <span>${minutos}</span> <small>Min</small>
+            </div>
+            <div class="tempo">
+                <span>${segundos}</span> <small>Seg</small>
+            </div>
+        `;
+    }, 1000);
+}
+
 function enviarConvidado (){
   $("body").on("click","#adicionarConvidado",function(e){
         e.preventDefault(); 
@@ -83,14 +118,28 @@ function enviarConvidado (){
 $(document).ready(function () {
     loadTable()
     enviarConvidado()
-
+    iniciarContagemRegressiva()
     // Evento de clique no botão "Confirmar"
     $('#lista tbody').on('click', '.btn-confirmar', function () {
         let id = $(this).data('id');
-        let nome = $(this).data('nome');
+        let nome = $(this).data('nome').trim(); // Remove espaços extras no início e no fim
+        // Divide apenas quando "e" estiver isolado com espaços ou quando houver vírgula
+        let nomesArray = nome.split(/\s+e\s+|\s*,\s*/i).map(n => n.trim()); 
+        let quantidadePessoas = nomesArray.length; // Conta os nomes corretamente
+        $('input[name="qtd_convidados"]').val(quantidadePessoas).attr('max', quantidadePessoas);
+
         $("#titulo-nome").text(`Confirmação de (${nome})`)
         $('[data-action="confirmarAcao"]').data('id', id); // Passa o ID para o botão de confirmação do modal
         $('#confirmarModal').modal('show'); // Abre o modal
+    });
+
+    $('body').on('input', 'input[name="qtd_convidados"]', function() {
+        let valorDigitado = parseInt($(this).val(), 10);
+        let max = parseInt($(this).attr('max'), 10);
+    
+        if (valorDigitado > max) {
+            $(this).val(max); // Define o valor máximo caso ultrapasse
+        }
     });
 
     // Evento de clique no botão "Confirmar" dentro do modal
@@ -117,6 +166,7 @@ $(document).ready(function () {
                 console.log(response)
                 $('input[name="qtd_convidados"]').val("");
                 $('#confirmarModal').modal('hide'); // Fecha o modal
+                location.href = $("input[name=app-url]").val() + "/listapresente"
             },
             error: function(response) {
                 console.log(response)
