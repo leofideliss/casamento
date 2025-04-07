@@ -52,6 +52,27 @@ function loadTable(){
     });
 }
 
+function qtdConfirmados(){
+    console.log($("input[name=app-url]").val() + "/api/getAllConvidadosNoTable")
+    $.ajax({
+        url: $("input[name=app-url]").val() + "/api/getAllConvidadosNoTable",
+        type: 'GET',
+        success: function(response) {
+            let total = 0;
+            let convidados = response.data
+            for(i in convidados)
+            {
+                total += convidados[i].qtd_convidados;
+            }
+
+            $("#qtd_confirmados").text(`Quantidade de confirmados: ${total}`)
+        },
+        error: function(response) {
+            console.log(response)
+        }
+    });
+}
+
 function iniciarContagemRegressiva() {
     let dataEvento = new Date("2025-05-17T11:30:00").getTime();
 
@@ -88,9 +109,9 @@ function iniciarContagemRegressiva() {
 }
 
 function enviarConvidado (){
-  $("body").on("click","#adicionarConvidado",function(e){
+    $("body").on("click","#adicionarConvidado",function(e){
         e.preventDefault(); 
-      let nameElement = $("#convidadoNome");
+        let nameElement = $("#convidadoNome");
         let nome = nameElement.val()
         let familia
         $("input[type='radio']:checked").each(function() {
@@ -113,11 +134,12 @@ function enviarConvidado (){
                 console.log(response)
             }
         });
-  });
+    });
 }
 $(document).ready(function () {
-    loadTable()
-    enviarConvidado()
+    qtdConfirmados();
+    loadTable();
+    enviarConvidado();
     iniciarContagemRegressiva()
     // Evento de clique no botão "Confirmar"
     $('#lista tbody').on('click', '.btn-confirmar', function () {
@@ -136,7 +158,7 @@ $(document).ready(function () {
     $('body').on('input', 'input[name="qtd_convidados"]', function() {
         let valorDigitado = parseInt($(this).val(), 10);
         let max = parseInt($(this).attr('max'), 10);
-    
+        
         if (valorDigitado > max) {
             $(this).val(max); // Define o valor máximo caso ultrapasse
         }
@@ -154,7 +176,7 @@ $(document).ready(function () {
             return; // Impede que o código continue
         }
 
-          $.ajax({
+        $.ajax({
             url: $("input[name=app-url]").val() + '/api/updateStatus',
             type: 'PUT',
             data: {
@@ -171,9 +193,9 @@ $(document).ready(function () {
             error: function(response) {
                 console.log(response)
             },
-              complete:function(response){
-  $('#lista').DataTable().ajax.reload(null, false);
-              }
+            complete:function(response){
+                $('#lista').DataTable().ajax.reload(null, false);
+            }
         });
 
 

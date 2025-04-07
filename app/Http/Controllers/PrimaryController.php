@@ -15,8 +15,9 @@ class PrimaryController extends Controller
         $id = convidados::create($request->all());
         if($id)
             return response()->json(["message" => "cadastrado com sucesso!"],200);
-        return
-            response()->json(["message" => "error!"],400);
+
+        return response()->json(["message" => "error!"],400);
+
     }
 
     function getAllConvidados(Request $request){
@@ -28,6 +29,13 @@ class PrimaryController extends Controller
             ->addIndexColumn()
             ->make(true);
     }
+
+    function getAllConvidadosNoTable(Request $request)
+    {
+        $convidados = convidados::all()->toArray();
+        return response()->json(["message" => "lista","data"=> $convidados],200);
+    }
+
 
     function alterarStatus(Request $request){
         $convidado = convidados::find($request->id);

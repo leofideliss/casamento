@@ -17,6 +17,8 @@
 
 <body>
     <div class="container mt-5">
+        <p id="qtd_confirmados">Quantidade de confirmados: </p>
+
         <form>
             <div class="mb-3 d-flex">
                 <input type="text" class="form-control me-2" id="convidadoNome" placeholder="Nome do convidado">
@@ -35,7 +37,7 @@
                 </div>
             </div>
 
-     <input type="hidden" name="app-url" value="{{ env('APP_URL') }}">
+            <input type="hidden" name="app-url" value="{{ env('APP_URL') }}">
 
         </form>
 
