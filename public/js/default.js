@@ -24,7 +24,7 @@ function loadTable(){
                     if(row.status == 2)
                         return `<span class="text-danger"> Não irei </span>`
                     
-                    return `<button class="btn-confirmar" data-id="${data}" data-nome="${row.nome}">Confirmar</button>`;
+                    return ``;
                 }
             }
         ],
